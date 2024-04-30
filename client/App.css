@@ -1,0 +1,453 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.0/dist/tailwind.min.css');
+
+body {
+    color: #292929;
+    font-family: 'Roboto', sans-serif;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.home {
+    background-color: #e6ebf1;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.signup-btn {
+    background-color: #003873;
+}
+
+
+.login-btn {
+    border-color: #003873;
+}
+
+.tab:hover {
+    border-bottom: 1px solid black;
+}
+
+.homeIntroduction {
+    background-image: url("./public/images/BgImage.png");
+    background-color: rgb(25, 34, 39);
+    height: 600px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    background-position: center;
+}
+
+.btn-case {
+    display: flex;
+    gap: 12px;
+}
+
+.homeIntroductionDiv {
+    width: 100%;
+    height: 100%;
+    /* /* padding-left: 30px;
+    padding-right:250px; */
+    /* position: relative;  */
+
+}
+
+.btn-case {
+    margin-top: 100px;
+    margin-left: 150px;
+}
+
+.home-img1 {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-color: white;
+    position: absolute;
+    right: 160px;
+    top: 120px;
+}
+
+.home-img2 {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: 60px;
+    left: 550px;
+}
+
+.getStarted-btn {
+    width: 140px;
+    border: 1px solid;
+    background-color: #003268;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 13px;
+
+}
+
+.scheduleBTN {
+    width: 80px;
+    border: 1px solid;
+    background-color: #003268;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: white;
+
+}
+
+.requestDemo-btn {
+    width: 140px;
+    border: 1px solid;
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    font-size: 13px;
+}
+
+.cookiesbtn {
+    width: 140px;
+    border: 1px solid;
+    background-color: #003268;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 13px;
+
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.scheduleD {
+    display: flex;
+    padding-bottom: 50px;
+}
+
+.demoDetails {
+    width: 50%;
+    height: 700px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    /* background-color: #003268; */
+
+}
+
+.calender {
+    width: 50%;
+    height: 700px;
+    background-color: #d9e1ea;
+    padding: 30px;
+    text-align: center;
+
+}
+
+.key-features {
+    margin: 20px 0px 70px 0px;
+}
+
+.key-img {
+    width: 200px;
+    /* border: 1px solid; */
+    /* border-radius: 10px; */
+    /* display: flex; */
+
+}
+
+.image-container {
+    padding: 20px;
+    /* Add padding for spacing */
+}
+
+.imageDiv1,
+.imageDiv2 {
+    width: 80px;
+    height: 80px;
+}
+
+.imageDiv2 {
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+
+.keyDesc {
+    width: 600px;
+    height: 200px;
+
+}
+
+.features {
+    display: flex;
+    margin-top: 20px;
+    font-size: 14px;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+}
+
+.flatpickr-calendar {
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    max-width: 20rem;
+    width: 100%;
+    font-size: 10px;
+}
+
+.whyHub {
+
+    width: 280px;
+    height: 180px;
+    border: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* background-color: #003873; */
+}
+
+
+.testimonials {
+    width: 300px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #002d5c;
+
+}
+
+.testimonialImg {
+    position: absolute;
+    left: 20px;
+    top: -35px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #929ca7;
+    border: 1px solid white;
+}
+
+.testimonial {
+    height: 250px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    overflow-y: auto;
+
+}
+
+.testimonial::-webkit-scrollbar {
+    display: none;
+}
+
+.list>li {
+    margin-bottom: 8px;
+}
+
+.socials {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #00244a;
+    padding: 6px;
+}
+
+.form>input {
+    background: 0;
+    width: 90%;
+    outline: none;
+}
+
+/* contact us */
+.contact-img {
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+.contact-form {
+    width: 350px;
+    height: 350px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.contact-form>form>input {
+    width: 90%;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 13px;
+
+}
+
+
+/* //forgot password */
+
+.forgot-password {
+    background-color: #d9e1ea;
+}
+
+.submit-btn {
+    background-color: #00244a;
+    color: white;
+    font-size: 12px;
+    padding: 6px;
+}
+
+.backToLogin {
+    border: 1px solid #00244a;
+    font-size: 12px;
+    padding: 6px;
+}
+
+.email-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #00244a;
+    padding: 6px;
+}
+
+.email-input {
+    background-color: #d9e1ea;
+    width: 300px;
+    margin-left: 10px;
+    font-size: 12px;
+
+}
+
+.email-input:focus {
+    outline: none;
+}
+
+
+
+/* dashboard */
+.side-nav {
+    width: 15%;
+    height: 100%;
+    background: #132941;
+    position: fixed;
+}
+
+.dashboard {
+    width: 85%;
+    margin-left: 190px;
+    height: 100%vh;
+}
+
+.main-dashboard {
+    display: flex;
+    background-color: #e6ebf1;
+}
+
+.dashboard-items {
+    margin-top: 50px;
+    font-size: 14px;
+    width: 70px;
+}
+
+.dashboard-items:hover {
+    border-bottom: 1px solid;
+}
+
+.dashboard-nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    gap: 10px;
+    padding: 20px;
+    background-color: #d9e1ea;
+    width: 100%;
+}
+
+.cardholder {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 300px;
+    height: 160px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px;
+    text-align: center;
+    padding: 2px;
+}
+
+.dashboard-content {
+    /* padding: 30px; */
+    width: 100%;
+    height: 100vh;
+}
+
+.activities {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card2 {
+    width: 450px;
+    height: 350px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px;
+    text-align: center;
+    padding: 2px;
+
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+th {
+    border: 1px solid black;
+    padding: 3px;
+    /* border-top: 0; */
+    /* border-left: 0; */
+
+
+}
+
+td {
+    border: 1px solid black;
+    /* border-top: 0; */
+    padding: 3px;
+    border-right: 0;
+    /* border-left: 0; */
+    border-bottom: 0;
+
+}
+
+
+/* login */
+
+.loginimg {
+    width: 400px;
+    height: 532px;
+}

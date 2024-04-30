@@ -1,14 +1,805 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+
+    <link href="../client/App.css" rel="stylesheet" />
 </head>
 
-<body>
-    <h1>helooooooooooooooooooooooooooooooooooooooooooooooooooooo</h1>
-    <h3>hiiiiiiiiiiiiiiiii</h3>
+<body class="home">
+
+    <!-- nav -->
+    <nav class="flex p-5 gap-32 justify-center items-center "
+        style="position: fixed; background-color: #e6ebf1; width: 100%;z-index: 9999; top: 0;">
+        <div>
+            <img width="100" src="./public/images/LogoIcon.jpg" alt="">
+        </div>
+        <div class="flex gap-12">
+            <ul class="flex gap-12 text-sm">
+                <li>
+                    <button class="tab w-20 cursor-pointer">
+                        <a href="./index.html">Home</a>
+                    </button>
+                </li>
+                <li><button class="tab w-20 cursor-pointer">Features</button></li>
+                <li><button class="tab w-20 cursor-pointer">Pricing</button></li>
+                <li><button class="tab w-20 cursor-pointer" id="contactUsBtn">Contact Us</button></li>
+                <li><button class="tab w-20 cursor-pointer">About us</button></li>
+            </ul>
+            <div class="flex text-sm gap-5">
+                <a href="./src/pages/login.html">
+                    <button class="login-btn border rounded-md w-20 p-1 cursor-pointer text-[#003873]">
+                        Login
+                    </button>
+                </a>
+                <!-- <button class="login-btn border rounded-md w-20 p-1 cursor-pointer text-[#003873]"  id="loginBtn">
+            Login
+          </button> -->
+                <button class="signup-btn border rounded-md w-20 p-1 button-bg text-white cursor-pointer">
+                    Sign Up
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- cookies -->
+    <div class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50 " id="modal2">
+        <div class="forgot-password w-10/12 p-6 rounded shadow-lg">
+            <h2 class="text-md font-semibold text-center">Welcome to HubOptimization! For the best browsing experience,
+                we use cookies to personalize content, analyze site traffic and enhance functionality. By clicking
+                "Accept Cookies" you agree to our use of cookies. You can manage your preferences anytime.</h2>
+            <div style=" display: flex; justify-content:flex-end;">
+                <div class="gap-9 flex justify-between pt-3 pb-3">
+                    <button style="background: 0;" class=" focus:outline-none cookiesbtn" id="close-modal2">
+                        Reject Cookies
+                    </button>
+                    <button class=" text-white  focus:outline-none cookiesbtn">
+                        Accept Cookies
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- homeIntroduction -->
+    <div id="home">
+        <main id="homeIntro">
+            <div>
+                <div class="homeIntroduction">
+                    <div class="homeIntroductionDiv"
+                        style=" margin: auto; width:100%; background-color:  rgba(0, 0, 0, 0.5);">
+                        <div style=" width: 50%; margin-left:150px; margin-top: 200px;">
+                            <h2 style="font-size: 30px;">Elevate your Co-working Experience</h2>
+                            <p style="font-size: 20px; margin-top: 50px; word-spacing: 0.4em; padding-right: 200px;">
+                                Streamling bookings, manage members, and optimize your space
+                                effortlessly.
+                            </p>
+                        </div>
+                        <div class="btn-case">
+                            <button class="getStarted-btn">Get started</button>
+                            <button class="requestDemo-btn" id="toggleButton">Request a Demo</button>
+                        </div>
+                        <div class="home-img1"><img src="./public/images/BgImg1.png" alt=""></div>
+                        <div class="home-img2"><img src="./public/images/BgImg2.png" alt=""></div>
+                    </div>
+                </div>
+
+
+                <!-- key features -->
+                <div class="key-features">
+                    <div style="padding-left: 160px ;padding-right: 160px;">
+                        <div style="display: flex;margin: auto; ;">
+                            <h2 style="font-weight: 600; font-size: 24px;">Key Features</h2>
+                        </div>
+                        <div>
+                            <div class="features ">
+                                <div style="display: flex; ">
+                                    <div class="key-img"
+                                        style="background-color: #D9E1EA; width: 130px; height: 200px; padding: 10px; border-radius: 10px;">
+                                        <img class="imageDiv1" src="./public/images/Row1Img1.png" alt="">
+                                        <img class="imageDiv2" src="./public/images/Row1Img2.png" alt="">
+                                    </div>
+                                    <div class="key-img"
+                                        style="margin-top: 30px; height: 200px;  background-color: #D9E1EA; width: 130px; padding: 10px;border-radius: 10px;">
+                                        <img class="imageDiv1" src="./public/images/Row1Img3.png" alt="">
+                                        <img class="imageDiv2" src="./public/images/Row1Img4.png" alt="">
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 style="margin-bottom: 10px; font-size: 24px;font-weight: 500;">Member Management
+                                    </h3>
+                                    <p style="font-size: 16px;">Early add,remove and manage members within the
+                                        co-working space,facilitating efficient collaboration and community building.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div>
+                            <div class="features ">
+                                <div style="display: flex; ">
+                                    <div class="key-img"
+                                        style="background-color: #D9E1EA; width: 130px; height: 200px; padding: 10px; border-radius: 10px;">
+                                        <img class="imageDiv1" src="./public/images/Row2Img1.png" alt="">
+                                        <img class="imageDiv2" src="./public/images/Row2Img2.png" alt="">
+                                    </div>
+                                    <div class="key-img"
+                                        style="margin-top: 30px; height: 200px; background-color:  #D9E1EA;  width: 130px; padding: 10px;border-radius: 10px;">
+                                        <img class="imageDiv1" src="./public/images/Row2Img3.png" alt="">
+                                        <img class="imageDiv2" src="./public/images/Row1Img4.png" alt="">
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 style="margin-bottom: 10px; font-size: 24px;font-weight: 500;">Calender/Bookings
+                                    </h3>
+                                    <p style="font-size: 16px;">Early add,remove and manage members within the
+                                        co-working space,facilitating efficient collaboration and community building.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <div class="features ">
+                                <div style="display: flex;  ">
+                                    <div class="key-img"
+                                        style="background-color: #D9E1EA; width: 130px; height: 200px; padding: 10px; border-radius: 10px;">
+                                        <img class="imageDiv1" src="./public/images/Row3Img1.png" alt="">
+                                        <img class="imageDiv2" src="./public/images//Row3Img2.png" alt="">
+                                    </div>
+                                    <div class="key-img"
+                                        style="margin-top: 30px; height: 200px;  background-color:  #D9E1EA; width: 130px; padding: 10px;border-radius: 10px;">
+                                        <img class="imageDiv1" src="./public/images/Row3Img3.png" alt="">
+                                        <img class="imageDiv2" src="./public/images/Row3Img4.png" alt="">
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 style="margin-bottom: 10px; font-size: 24px;font-weight: 500;">Analytics</h3>
+                                    <p style="font-size: 16px;">
+                                        Harness detailed insights into member behavior, booking patterns revenue
+                                        generation and recomendations, empowering</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="features">
+                            <div style="display: flex; ">
+                                <div class="key-img"
+                                    style="background-color: #D9E1EA; width: 130px; height: 200px; padding: 10px; border-radius: 10px;">
+                                    <img class="imageDiv1" src="./public/images/Row4Img1.png" alt="">
+                                    <img class="imageDiv2" src="./public/images/Row4Img2.png" alt="">
+                                </div>
+                                <div class="key-img"
+                                    style="margin-top: 30px;width: 130px; height: 200px;  background-color: #D9E1EA; width: 130px; padding: 10px;border-radius: 10px;">
+                                    <img class="imageDiv1" src="./public/images/Row4Img4.png" alt="">
+                                    <img class="imageDiv2" src="./public/images/Row4Img4.png" alt="">
+                                </div>
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 10px; font-size: 24px;font-weight: 500;">Settings and
+                                    Customization</h3>
+                                <p style="font-size: 16px;">personalize workspace datails,configure payment gateways,
+                                    and tailor notification settings to suit specific business needs and preference.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Why choose HubOptimize -->
+                <div style=" width: 80% ;margin: auto;">
+                    <div>
+                        <h3 style="font-size: 20px; margin-left: 40px; font-weight: 600; ">Why choose HubOptimize</h3>
+                    </div>
+                    <div
+                        style="margin-bottom: 30px; display:flex; flex-wrap: wrap ; justify-content: space-evenly; gap: 30px; margin-top: 30px;">
+                        <div class="whyHub">
+                            <h4 style=" text-align: center; font-weight: 600;">Talored solution for Nigeria Co-working
+                                space</h4>
+                            <p style="font-size: 12px; margin-top:20px ; text-align: center; ">HubOptimization is
+                                meticulously crafted to address the specific requirements and challenges faced by
+                                co-working spaces in Nigeria,ensuring optimal performances and efficiency</p>
+                        </div>
+                        <div class="whyHub">
+                            <h4 style=" text-align: center;  font-weight: 600;">Advanced features,Simplified Experience
+                            </h4>
+                            <p style="font-size: 12px; margin-top:20px ; text-align: center;">
+                                Experience the perfect blend of advanced_reatures an simp with HubUptmize. Vur platrorm
+                                empowers CO-workIng space owners and members withinuitive tools for seamless management
+                                andcollaboration</p>
+                        </div>
+                        <div class="whyHub">
+                            <h4 style=" text-align: center;  font-weight: 600;">Seamless Transcations with Local Payment
+                                gateways </h4>
+                            <p style="font-size: 12px; margin-top:20px ; text-align: center;">
+                                Enov hassle-free transactions with support forlpavmengateways tallored to theNigerian
+                                market. HubUpumize ensuressmooth financial interactions, enhancing convenience for both
+                                owners and members </p>
+                        </div>
+                        <div class="whyHub">
+                            <h4 style=" text-align: center;  font-weight: 600;">Affordable Solutions Without Compromise
+                            </h4>
+                            <p style="font-size: 12px; margin-top:20px ; text-align: center;">
+                                We believe in delivering value withoutbreaking the bank. HubOphmize offers Cost-electve
+                                solutons that prioritize functionality.ensuring that co-workins spaces of al sizes can
+                                thrive withouthnancialconstraints.</p>
+                        </div>
+                        <div class="whyHub">
+                            <h4 style=" text-align: center;  font-weight: 600;">Insightful Analytics For Informed
+                                Decision-Making</h4>
+                            <p style="font-size: 12px; margin-top:20px ; text-align: center;">
+                                Gain invaluable insignts Into member benavior.booking trends, and revenue streams
+                                withHubOptimize's comprehensive analytics. Makedata-driven decisions to optimize vour
+                                co-workIngspace's performance and proftabiltv.</p>
+                        </div>
+                        <div class="whyHub">
+                            <h4 style=" text-align: center;  font-weight: 600;">Intuitive Interface For Effortless
+                                Navigation</h4>
+                            <p style="font-size: 12px; margin-top:20px ; text-align: center;">Navigate HubOptimize's
+                                user-friendlyinterface with ease. Designed with simplicitydin mind. our datorm offers a
+                                smooth and intuitive experience for both novice and experienced users alike</p>
+                        </div>
+                        <div class="whyHub">
+                            <h4 style=" text-align: center; font-weight: 600;">Exceptional Cusomers Support, Every Step
+                                of the Way</p>
+                                <p style="font-size: 12px; margin-top:20px ; text-align: center;">
+                                    Our dedicated support team is committed toproviding timely assistanceand
+                                    guidancewhenever vou need it. Count on us to ensurethat your HubOptimize experience
+                                    is smooth,seamless, and stress-tree.</p>
+                        </div>
+                        <div class="whyHub">
+                            <h4 style=" text-align: center; font-weight: 600;">Fortified Security for your Peace of Mind
+                            </h4>
+                            <p style="font-size: 12px; margin-top:20px ; text-align: center;"> Rest easy knowing that
+                                your data Issateguarded with hubUptmize's robustsecurity measures. We prioritize
+                                theconfdentialitv and inteeritv of vourinformation. so vou can focus on what
+                                mattersmost-running your co-working space
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Testimonials -->
+                <div style="padding-left: 100px; padding-top: 20px; padding-bottom: 30px; margin: auto;">
+                    <div>
+                        <h3 style="font-size: 20px ; font-weight: 600; margin-bottom: 10px;">Testimonials</h3>
+                    </div>
+                    <div class="testimonial">
+                        <div style="position: relative;">
+                            <div class="testimonialImg">
+                                <img src="./public/images/Ellipse 1519.png" alt="">
+
+                            </div>
+                            <div class="testimonials " style="color: white; font-size: 12px; padding:10px  ">
+                                <h4 style="margin-top: 13px;">John Doe - Co-Working Space Owner</h4>
+                                <h4 style="margin-top: 10px;">
+                                    HubOptimize has transformed the way I manage my co-working space. The intuitive
+                                    dashboard, robust analytics, and seamless booking system have significantly
+                                    streamlined our operations. Highly recommended!
+                                </h4>
+                            </div>
+                        </div>
+                        <div style="position: relative;">
+                            <div class="testimonialImg">
+                                <img src="./public/images/Ellipse 1519 (2).png" alt="">
+                            </div>
+                            <div class="testimonials"
+                                style="height: 180px;background-color:#017a40; color: white; font-size: 12px; padding:10px   ">
+                                <h4 style="margin-top: 13px;">Emily Williams - Co-Working Space Manager</h4>
+                                <h4 style="margin-top: 10px;">
+                                    Managing multiple spaces can be challenging, but HubOptimize has made it effortless.
+                                    From member management to space customization, the platform offers everything we
+                                    need.It's truly a must-have for any co-
+                                </h4>
+                            </div>
+                        </div>
+                        <div style="position: relative;">
+                            <div class="testimonialImg">
+                                <img src="./public/images/Ellipse 1518.png" alt="">
+                            </div>
+                            <div class="testimonials" style="color: white; font-size: 12px; padding:10px  ">
+                                <h4 style="margin-top: 13px;">Jane Smith - Freelancer Member</h4>
+                                <h4 style="margin-top: 10px;">
+                                    As a freelancer, finding the right co-working space is crucial for my
+                                    productivity. HubOptimize not only helped me discover great spaces but also
+                                    simplified the booking
+                                    process. Plus, the responsive customer support team is always there to assist!
+                                </h4>
+                            </div>
+                        </div>
+                        <div style="position: relative;">
+                            <div class="testimonialImg">
+                                <img src="./public/images/Ellipse 1519.png" alt="">
+
+                            </div>
+                            <div class="testimonials"
+                                style="height: 180px;background-color:#017a40; color: white; font-size: 12px; padding:10px  ">
+                                <h4 style="margin-top: 13px;">Jane Smith - Freelancer Member</h4>
+                                <h4 style="margin-top: 10px;">
+                                    As a freelancer, finding the right co-working space is crucial for my
+                                    productivity. HubOptimize not only helped me discover great spaces but also
+                                    simplified the booking
+                                    process. Plus, the responsive customer support team is always there to assist!
+                                </h4>
+                            </div>
+                        </div>
+                        <div style="position: relative;">
+                            <div class="testimonialImg"></div>
+                            <div class="testimonials"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 80%; margin: auto; padding-bottom:90px; ">
+                    <h4 style="font-size: 30px; font-weight: 700;">Ready to optimize work space?</h4>
+                    <div style="display: flex; gap:20px ;margin-top: 20px;">
+                        <button
+                            style=" background-color: #002d5c; color: white; font-size: 13px; border-radius: 5px; width: 130px; padding: 10px; background-color: rgb(29, 74, 114);">Get
+                            started for free</button>
+                        <button
+                            style=" color: #002d5c; border-color: #002d5c; width: 130px; font-size: 14px; border-radius: 5px; padding: 10px; border: 1px solid;">Request
+                            a Demo</button>
+                    </div>
+                </div>
+        </main>
+
+
+
+        <!-- contact us -->
+        <div class="hidden" id="contactUs">
+            <div style=" background-color: #e6ebf1; display: flex; justify-content: center ; margin-top: 80px;">
+                <div style="padding: 20px;">
+                    <h3 style="text-align: center;">Contact us</h3>
+                    <p style="font-size: 13px;">We are here to help you with your queries, fell free to reach out to us
+                        using the form below or the provided details.</p>
+                    <div style="display: flex; margin-top: 10px; margin-bottom: 10px;">
+                        <div class="contact-img"></div>
+                        <form action="" id="contactForm"
+                            style="font-size: 12px;border: 1px solid black; border-radius: 5px; width: 350px; height: 350px;  display: flex; justify-content: center; padding: 15px;">
+                            <div style="  width: 98%;">
+                                <h3 style="font-size:18px; padding-top: 3px; padding-bottom: 3px; font-weight:600;">
+                                    Contact form</h3>
+                                <div style="margin-bottom: 10px;">
+                                    <label for="name">Name</label>
+                                    <div
+                                        style=" padding:6px;  border: 1px solid; border-color: #cad3dd;border-radius: 5px; ">
+                                        <input id="name name=" name" type="text"
+                                            style="width:90%;font-size: 10px; background: 0;  outline: none; border: 0;"
+                                            placeholder="Enter name">
+                                    </div>
+                                </div>
+
+                                <div style="margin-bottom: 10px;">
+                                    <label for="email">Email</label>
+                                    <div
+                                        style=" padding:6px; border: 1px solid; border-color: #cad3dd; border-radius: 5px; ">
+                                        <input id="email" name="email" type="text"
+                                            style="width:90%;font-size: 10px; background: 0;  outline: none; border: 0;"
+                                            placeholder="Enter email">
+                                    </div>
+                                </div>
+
+                                <div style="margin-bottom: 10px; ">
+                                    <label for="subjectTitle">Subject title</label>
+                                    <div
+                                        style=" padding:6px; border: 1px solid;  border-color: #cad3dd;border-radius: 5px; ">
+                                        <input id="subjectTitle" name="subjectTitle" placeholder="" type="text"
+                                            style="width:90%; font-size: 10px;  background: 0;  outline: none; border:0">
+                                    </div>
+                                </div>
+
+                                <div style="margin-bottom: 10px; ">
+                                    <label for="message">Message</label>
+                                    <div
+                                        style=" padding:12px; border: 1px solid;  border-color: #cad3dd;border-radius: 5px; ">
+                                        <input id="message" name="message" placeholder="" type="text"
+                                            style="width:90%; font-size: 10px;  background: 0;  outline: none; border:0">
+                                    </div>
+                                </div>
+
+                                <button
+                                    style="width:100%; color: white; background-color: #00244a; border:1px solid; font-size: 10px; padding:8px; border-color: #cad3dd;border-radius: 5px; margin-bottom: 10px;">
+                                    Add member
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div>
+                        <h5 style="font-size: 16px; font-weight: 600;">Looking for something else?</h5>
+                        <p style="font-size: 12px; margin-top: 10px;">we're here to reachout to our friendly support
+                            team with any enqiries or concerns about HubOptimize</p>
+                        <h5 style="font-size: 16px; font-weight: 600; margin-top: 10px;">Contact details</h5>
+                        <p style="font-size: 12px; margin-top: 8px;">
+                            <span><a href="">Support@Huboptimize.com</a></span>
+                        </p>
+                        <p style="font-size: 12px; margin-top: 8px;">
+                            <span><a href="">+234905499540</a></span>
+                        </p>
+                        <p style="font-size: 12px; margin-top: 8px;">
+                            <span><a href="">HubOphmize Hq, 123 Business Ave, Lagos ,Nigeria</a></span>
+                        </p>
+                        <h5 style="font-size: 16px; font-weight: 600; margin-top: 8px;">Follow us all Social Media</h5>
+                        <p style="font-size: 12px; margin-top: 10px;">Stay up-to-date with the latest neaws and updates
+                            from HubOptimize! Connect with u on our social media channels</p>
+                        <ul style="font-size: 13px; margin-top: 10px;">
+                            <li>HubOptimize</li>
+                            <li>HubOptimize</li>
+                            <li>HubOptimize</li>
+                            <li>HubOptimize</li>
+                        </ul>
+                        <p style="font-size: 12px; margin-top: 6px;">Join our community to learn more new features
+                            ,inustry trends and special offers. Let's connect and optimize your experience with
+                            HubOptmize! </p>
+                        <h5 style="font-size: 16px; font-weight: 600; margin-top: 8px;">Get Location</h5>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Loginform  
+<div  class="hidden" id="loginForm" >
+<div style="margin-top: 100px; margin-bottom: 100px; display: flex;" >
+  <div class="loginimg">
+    <img src="../../../../Huboptimize/clientside/public/images/Email-Image.png" alt="">
+  </div>
+  <div>
+  <form action="" style=" margin-top: 20px; font-size: 12px; background-color: #ebebeb; border-radius: 5px; width: 350px; height: 460px;  display: flex; justify-content: center; padding: 15px;">
+      <div style="  width: 98%;">
+          <p style="font-size: 10px;">Alternatively you can invite members using the invite link https:johndeo.HubOptimize.com</p>
+              <h3 style="font-size:22px; padding-top: 5px; padding-bottom: 5px; ">Personal details</h3>
+             <div style="margin-bottom: 10px;">
+              <label for="name">Name</label>
+              <div style=" padding:6px;  border: 1px solid; border-color: #cad3dd;border-radius: 5px; ">
+              <input id="name" type="text" style="width:90%;font-size: 10px; background: 0;  outline: none; border: 0;" placeholder="Enter name">
+              </div>
+             </div>
+      
+             <div style="margin-bottom: 10px;">
+              <label for="email">Email</label>
+              <div style=" padding:6px; border: 1px solid; border-color: #cad3dd; border-radius: 5px; ">
+              <input id="email" type="text" style="width:90%;font-size: 10px; background: 0;  outline: none; border: 0;" placeholder="Enter email">
+              </div>
+             </div>
+      
+             <div style="margin-bottom: 10px; ">
+              <label for="">Phone number</label>
+              <div style=" padding:6px; border: 1px solid;  border-color: #cad3dd;border-radius: 5px; ">
+              <input placeholder="Enter number" type="text" style="width:90%; font-size: 10px;  background: 0;  outline: none; border:0">
+              </div>
+             </div>
+      
+             <div style="margin-bottom: 10px; ">
+              <label for="status">Status</label>
+              <div style=" gap:5px;display: flex;justify-content: start; align-items: center;">
+                  <input id="status" placeholder="status" type="range" class=" appearance-none slider" style="width: 30px; border: 1px solid; border-radius: 10px;">
+                   <p>inactive</p>
+              </div>
+             </div>
+             <div style="margin-bottom: 10px;">
+              <label for="joindate">Join Date</label>
+              <div style="  padding:6px; border: 1px solid;border-color: #cad3dd;border-radius: 5px; ">
+              <input id="joindate" type="text" style="width:90%;font-size: 10px; background: 0;  outline: none; border: 0;" placeholder="11-04-2024">
+              </div>
+             </div>
+              <button style="width:100%; color: white; background-color: #00244a; border:1px solid; font-size: 10px; padding:8px; border-color: #cad3dd;border-radius: 5px; margin-bottom: 10px;">
+                  Add member
+              </button>
+      
+              <button style="  width: 100%; color: #00244a; border: 1px solid; font-size: 10px; padding:8px; border-color: #cad3dd;border-radius: 5px; margin-bottom: 10px; margin: auto;">
+             Cancel
+              </button>
+      </div>
+      
+      </form>
+      
+  </div>
+</div>
+
+
+</div> -->
+
+
+
+
+        <!-- Schedule a Demo with HubOptimize -->
+        <div class="hidden" id="scheduleDemo" style="margin-top: 100px;">
+            <div class="scheduleD">
+                <div class="demoDetails">
+                    <h2 style="font-size:20px; font-weight: 600;">Schedule a Demo with HubOptimize</h2>
+                    <p style="font-size: 13px; margin-top: 20px;">At HubOptimize, we understand that seeinf is
+                        believing. Schedule a personalize Demo with our expert today to experience the power of our
+                        co-working space booking and CRM software first hand</p>
+                    <h2 style="font-size:20px; font-weight: 600; margin-top: 20px; margin-bottom: 20px;">Demo Details
+                    </h2>
+                    <span style="font-size:13px; ">
+                        <p style="margin-bottom: 5px;">Date: Choose a date thet works best for you from our available
+                            slots.</p>
+                        <p style="margin-bottom: 5px;">Time: Select a convinent time for your Demo session.</p>
+                        <p style="margin-bottom: 5px;">Duration: Appropriate duration of the demo session:45 minuites.
+                        </p>
+                        <p style="margin-bottom: 5px;">Your information: Provide us with your contac details so we can
+                            reach out toconfirm your demo.</p>
+                    </span>
+                    <h2 style="font-size:20px;  font-weight: 600; margin-top: 20px; margin-bottom: 20px">Why Schedule a
+                        Demo?</h2>
+                    <h4 style="font-size:16px; font-weight: 600; margin-bottom: 5px;">Tailored Solutions </h4>
+                    <p style="font-size: 13px; margin-bottom: 5px;">Discover how HubOptimize can be customized to meet
+                        the specific needs of your co-working space</p>
+                    <h4 style="font-size:16px; font-weight: 600; margin-bottom: 5px;">Life Demostration </h4>
+                    <p style="font-size: 13px; margin-bottom: 5px;">Withnesses the features and functionalities of
+                        HubOptimize in action with a live demostration</p>
+                    <h4 style="font-size:16px; font-weight: 600; margin-bottom: 5px;">Q&A Session </h4>
+                    <p style="font-size: 13px; margin-bottom: 5px;">Get all your questions answered by our knowledgeable
+                        team during the demo</p>
+                </div>
+
+
+
+
+                <!-- Demo form -->
+                <div class="calender ">
+                    <form action="" id="NextScheduleForm" class="hidden"
+                        style=" text-align: start; padding: 0px 50px 0px 50px ; font-size: 12px;">
+                        <h2 style=" font-weight: 600; font-size: 22px; padding: 10px 0px 10px 0px ;">Get started with
+                            HubOptimization Demo</h2>
+                        <div style="display:flex; gap:10px;">
+                            <span><i class="fas fa-lock"></i></span>
+                            <p style="font-size: 12px; margin-bottom: 5px;">45 mins</p>
+                        </div>
+                        <div style="display:flex; gap:10px;">
+                            <span><i class="fas fa-lock"></i></span>
+                            <p style="font-size: 12px; margin-bottom: 5px">Time</p>
+                        </div>
+                        <div style="display:flex; gap:10px;">
+                            <span><i class="fas fa-lock"></i></span>
+                            <p style="font-size: 12px; margin-bottom: 5px">West Africa Time</p>
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <div style="margin-top: 10px;">
+                                <label for="firstname"> First name*</label>
+                                <div class="form" style="width: 100%; border-radius: 5px; display: flex; gap: 10px; ">
+                                    <i class="fas fa-lock"></i>
+                                    <input id="firstname" name="firstname" type="text" placeholder="Enter name"
+                                        class="">
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <label for="lastname">Last name*</label>
+                                <div class="form" style="width: 100%; border-radius: 5px;  display: flex; gap: 10px; ">
+                                    <i class="fas fa-lock"></i>
+                                    <input id="lastname" name="lastname" type="text" placeholder="Enter name" class="">
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <label for="email">Email*</label>
+                                <div class="form" style="width: 100%; border-radius: 5px;  display: flex; gap: 10px; ">
+                                    <i class="fas fa-lock"></i>
+                                    <input id="email" name="email" type="text" placeholder="Enter email" class="">
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <label for="guestemail">Guest Email*</label>
+                                <div class="form" style="width: 100%; border-radius: 5px; display: flex; gap: 10px; ">
+                                    <i class="fas fa-lock"></i>
+                                    <input id="guestemail" name="guestemail" type="text" placeholder="Enter guest email"
+                                        class="">
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <label for="companyname">Company Name*</label>
+                                <div class="form" style="width: 100%; border-radius: 5px; display: flex; gap: 10px; ">
+                                    <i class="fas fa-lock"></i>
+                                    <input id="companyname" name="companyname" type="text"
+                                        placeholder="Enter company name" class="">
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <label for="jobtitle">Job Title*</label>
+                                <div class="form" style="width: 100%; border-radius: 5px; display: flex; gap: 10px; ">
+                                    <i class="fas fa-lock"></i>
+                                    <input id="jobtitle" name="jobtitle" type="text" placeholder="Enter job title"
+                                        class="">
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <label for="addcomment">Additional Comment/Questions*</label>
+                                <div class="form" style="width: 100%; border-radius: 5px; display: flex; gap: 10px; ">
+                                    <i class="fas fa-lock"></i>
+                                    <input id="addcomment" name="addcomment" type="text" placeholder="Enter here"
+                                        class="">
+                                </div>
+                            </div>
+                            <div style="margin-top: 12px; display: flex; gap: 6px;">
+                                <input type="checkbox">
+                                <p>I agree to the Terms and Condition and Privacy Policy</p>
+                            </div>
+                            <button id="open-modal" class="form"
+                                style=" color: white; width: 100%; background-color: #002d5c; border-radius: 5px; margin-top: 20px; ">
+                                Schedule this Event <span
+                                    class="inline-block animate-spin rounded-full  border-gray-200 border-t-4 border-t-gray-800 h-4 w-4 ml-4"></span>
+                            </button>
+                        </div>
+                    </form>
+
+
+
+                    <!-- ScheduleDemo2 form-->
+                    <div id="scheduleDemo2">
+                        <div>
+                            <h2 style="font-size:18px;  font-weight: 600; margin-bottom: 8px">Select Date</h2>
+                            <div class="" style="margin: auto;  width: 300px; height: 200px;">
+                                <div id="calendar-container" style="display: none;"></div>
+                            </div>
+                        </div>
+                        <h2 style="font-size:18px;  font-weight: 600; margin-top: 130px; margin-bottom: 5px">Select Time
+                        </h2>
+                        <p style="margin-bottom: 10px; font-size: 12px;">Duration: 45mins</p>
+                        <div
+                            style="width: 150px ; background-color: white; height: 60px; padding-bottom: 20px; border-radius: 10px; margin: auto;">
+                        </div>
+                        <div
+                            style="width: 50%;  display: flex; justify-content: space-between; margin:auto; margin-top: 20px;">
+                            <button class="scheduleBTN" style="background: 0; color: #002d5c;">Cancel</button>
+                            <button id="NextSchedule" class="scheduleBTN">Next</button>
+                        </div>
+                        <p style="margin-top: 50px; font-size: 12px; padding-right: 80px; padding-left: 80px;">Cant find
+                            a suitable slot? Contact us directly at <span><a href="#">HubOptimize@gmail.com
+                                </a></span>alternative appointment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Successfully Scheduled Demo pop up -->
+    <div class="hidden" id="modal">
+        <div class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50 ">
+            <div class="forgot-password w-96 p-6 rounded shadow-lg">
+                <div class="flex justify-between pt-3 pb-3">
+                    <h2 class="text-lg font-semibold text-center">Demo Scheduled Successfully</h2>
+                    <button class="text-gray-600 hover:text-gray-700 focus:outline-none" id="close-modal">
+                        <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M14.293 5.293a1 1 0 011.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 111.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+                <div style="font-size: 12px;">
+                    <h2 class="pb-3">
+                        Thank you for scheduling a demo with Huboptimize! We're excited to show you how our co-working
+                        space booking and CRM softwarecan revolutionize your operations.
+                    </h2>
+                    <p>Date:Thursday May ,2024</p>
+                    <p>Time:12:00pm</p>
+                    <p>Duration:45 minuites</p>
+                    <p>Your information:</p>
+                    <p>Name: johndoe</p>
+                    <p>Phone Number: +234</p>
+                    <p>Additional Comment/Questions:</p>
+                    <p>Locking forward to learning about your analytics features. What are the pricing options available
+                        foe HubOptmize</p>
+                    <p class="mt-4">Our team will reach out to you shortly to confirm your demo appointment. In the
+                        meantime, if you have any questions or need further assistance feel free to contact us
+                        @HubOptimization.gmail.com. We look forward to speaking with you </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- footer -->
+    <footer>
+        <div
+            style=" display: flex; margin: auto; padding-bottom: 200px; height: 350px; background-color:#002d5c;color: white; padding-top: 20px; gap: 100px; justify-content:center;">
+            <ul>
+                <li>
+                    <a href="./index.html"><img width="100" src="./public/images/Logo2.png" alt=""></a>
+                </li>
+
+                <li style="margin-top: 210px; font-size: 12px;">
+                    &copy; 2024 Huboptimize. All right reserved
+                </li>
+                <li style="font-size: 12px; display: flex; gap: 15px; margin-top: 10px;">
+                    <a>Cookies policy</a>
+                    <a href="">Terms and condition</a>
+                </li>
+            </ul>
+
+
+            <ul style="font-size: 12px;" class="list">
+                <li style="font-size: 18px; font-weight: 600 ; margin-bottom: 10px;">Features</li>
+                <li>User Authentication</li>
+                <li>Dshboard</li>
+                <li>Member Management</li>
+                <li>Space Management</li>
+                <li>Calender/Bookings</li>
+                <li>Profile Management</li>
+                <li>Analytics</li>
+                <li>Settings</li>
+                <li>Cusomers Supports</li>
+                <li>Recommendations</li>
+            </ul>
+
+
+            <ul style="font-size: 12px;" class="list">
+                <li style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">Contact Us</li>
+                <li>Tech4Dev</li>
+                <li><a href="#">Enquiry@HubOptimize.com</a></li>
+                <li>(+234)90778808938 </li>
+                <li style="font-size: 14px;">Contact Team</li>
+            </ul>
+
+
+            <ul style="font-size: 12px;">
+                <li style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">About Us</li>
+                <li style="width: 200px;">Huboptimize is a leading provider of co-working space bokings and CRM
+                    software, design specifically for nigerian markert. Our mission is to empower co-working space
+                    ownwer and users with intuitive tools and personalize support to optimize thier workspace experience
+                </li>
+                <li style="margin-top: 70px; display: flex; gap:20px">
+                    <div class="socials"><i class="fab fa-linkedin"></i></div>
+                    <div class="socials"> <i class="fab fa-instagram"></i></div>
+                    <div class="socials"><i class=" fab fa-facebook-f"></i></div>
+                    <div class="socials"><i class="fab fa-twitter"></i></div>
+                    <div class="socials">
+                        <i class="fab fa-tiktok"></i>
+                </li>
+            </ul>
+
+        </div>
+    </footer>
 </body>
 
 </html>
+
+
+<script src="./index.js"></script>
+
+<script>
+
+    function showCalendar() {
+        const date = flatpickr("#calendar-container", {
+            inline: true,
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        showCalendar();
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
